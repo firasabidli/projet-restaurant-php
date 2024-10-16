@@ -1,0 +1,59 @@
+<div class="row">
+    <div class="col">
+        <h3>ajouter User <i class="bi bi-plus-square"></i></h3>
+    </div>
+    <div class="col">
+        <a href="gererUSERS.php" class="btn btn-primary float-end"><i class="bi bi-house"></i></a>
+    </div>
+</div>
+
+<form action="<?= $_SERVER['PHP_SELF'] ?>" method="post">
+  
+  
+  <div class="mb-3">
+    <label for="nom" class="form-label">Nom:</label>
+    <input type="text"  value="<?= $nom?>" class="form-control <?= array_key_exists('nom', $errors) ? 'is-invalid' : '' ?> id="nom" name="nom"  placeholder="Nom" >
+  </div>
+
+  <div class="mb-3 ">
+    <label for="prenom" class="form-label">Prenom:</label>
+    <input type="text"  value="<?= $prenom ?>" class="form-control <?= array_key_exists('prenom', $errors) ? 'is-invalid' : '' ?> id="prenom" name="prenom" placeholder="Prenom">
+  </div>
+
+  <div class="mb-3">
+    <label for="date de naissance" class="form-label">Date de naissance:</label>
+    <input type="date"  value="<?= $date_nais ?>" class="form-control <?= array_key_exists('date_nais', $errors) ? 'is-invalid' : '' ?> id="date_nais"  name="date_nais"  placeholder="jj/mm/aaaa">
+  </div>
+  <div class="mb-3">
+    <label for="tel" class="form-label">Numero de téléphone:</label>
+    <input type="text"  value="<?= $tel ?>" class="form-control <?= array_key_exists('tel', $errors) ? 'is-invalid' : '' ?> id="tel" name="tel" placeholder="Numero du telephone">
+  </div>
+  <div class="mb-3">
+    <label for="adresse" class="form-label"> Adresse:</label>
+    <input type="text" value="<?= $adresse ?>" class="form-control <?= array_key_exists('adresse', $errors) ? 'is-invalid' : '' ?> id="adresse" name="adresse"  placeholder="Adresse">
+  </div>
+  <div class="mb-3">
+    <label for="email" class="form-label">Email:</label>
+    <input type="email"  value="<?= $email ?>" class="form-control <?= array_key_exists('email', $errors) ? 'is-invalid' : '' ?> id="email" name="email" placeholder="abcd@xyz.com">
+  </div>
+  <div class="mb-3">
+    <label for="password" class="form-label">Password:</label>
+    <input type="text"  value="<?= $password ?>" class="form-control <?= array_key_exists('password', $errors) ? 'is-invalid' : '' ?> id="password" name="password" placeholder="Password">
+  </div>
+  
+  <div class="mb-3">
+    <label for="avatar" class="form-label">Avatar:</label>
+    <input type="file"  value="<?= $avatar ?>" class="form-control <?= array_key_exists('avatar', $errors) ? 'is-invalid' : '' ?> id="avatar" name="avatar"  accept=".jpg, .jpeg, .png">
+  </div>
+  <div class="mb-3">
+    <label for="role" class="form-label">Role:</label>
+    <select class="form-control form-select" name="role" id="role">
+            <option value="admin">Admin</option>
+            <option value="user" selected>user</option>
+          </select>
+     </div>
+  
+    <button type="submit" class="btn btn-primary"><i class="bi bi-send-plus-fill"></i>envoyer</button>
+    <button type="reset" class="btn btn-secondary"><i class="bi bi-x-square-fill"></i>Reset</button>
+
+</form>

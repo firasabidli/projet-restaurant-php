@@ -1,0 +1,52 @@
+<link rel="stylesheet" href="./assets/css/signin.css">
+<main class="form-signin">
+    <?php if (count($errors) > 0) : ?>
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <?= $errors[0] ?>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    <?php endif; ?>
+    <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
+        <h1 class="h3 mb-3 fw-normal text-center text-success ">Creer votre compte</h1>
+
+        <div class="form-floating">
+            <input type="text" name="nom" class="form-control" id="floatingUsername" placeholder="nom">
+            <label for="floatingNom">Nom</label>
+        </div>
+        <div class="form-floating">
+            <input type="text" name="prenom" class="form-control" id="floatingUsername" placeholder="prenom">
+            <label for="floatingPrenom">Prenom</label>
+        </div>
+        <div class="form-floating">
+            <input type="date" name="date_nais" class="form-control" id="floatingInput" >
+            <label for="floatingDateNaissanece">Date De Naissanece</label>
+        </div>
+        <div class="form-floating">
+            <input type="text" name="tel" class="form-control" id="tel" placeholder="+216 23456789">
+            <label for="floatingInput">Numero du Téléphone</label>
+        </div>
+        <div class="form-floating">
+            <textarea name="adresse" id="adresse" cols="30" rows="10" class="form-control" placeholder="Adresse"></textarea>
+            <label for="floatingInput">Adresse</label>
+        </div>
+        <div class="form-floating">
+            <input type="email" name="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+            <label for="floatingInput">Email</label>
+        </div>
+        <div class="form-floating">
+            <input type="password" name="password" class="form-control" id="floatingPassword" placeholder="Password">
+            <label for="floatingPassword">Password</label>
+        </div>
+        <div class="form-floating">
+            <input type="password" name="confirm_password" class="form-control" id="floatingConfirmPassword" placeholder="Confirm password">
+            <label for="floatingConfirmPassword">Confirm password</label>
+        </div>
+        <div class="form-floating">
+            <input type="file" name="avatar" class="form-control" id="floatingInput" >
+            <label for="floatingConfirmPassword">Choisir votre avatar</label>
+        </div>
+        <button class="w-100 btn btn-lg btn-primary" type="submit" name="submit">Envoyer</button>
+        <p class="mt-5 mb-3 text-primary">Avez vous un compte? <a href="login.php" class="text-decoration-none text-success">Login ici!</a></p>
+        
+    </form>
+</main>

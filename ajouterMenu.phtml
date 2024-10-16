@@ -1,0 +1,28 @@
+<div class="row">
+    <div class="col">
+        <h3>ajouter Menu <i class="bi bi-plus-square"></i></h3>
+    </div>
+    <div class="col">
+        <a href="gererMenu.php" class="btn btn-primary float-end"><i class="bi bi-house"></i></a>
+    </div>
+</div>
+
+<form action="<?= $_SERVER['PHP_SELF'] ?>" method="post">
+    <div class="mb-3">
+        <label for="title" class="form-label">Nom de Menu</label>
+        <input type="text" required value="<?= $title ?>" class="form-control <?= array_key_exists('title', $errors) ? 'is-invalid' : '' ?>" id="title" name="title">
+        <small class="text-danger"><?= array_key_exists('title', $errors) ? $errors['title'] : '' ?></small>
+    </div>
+    <div class="mb-3">
+        <label for="prix" class="form-label">Prix</label>
+        <input type="text" required value="<?= $price ?>" class="form-control <?= array_key_exists('price', $errors) ? 'is-invalid' : '' ?>" id="prix" name="price">
+        <small class="text-danger"><?= array_key_exists('price', $errors) ? $errors['price'] : '' ?></small>
+    </div>
+    <div class="mb-3">
+        <label for="image" class="form-label">Image</label>
+        <input type="file" id="image" name="image" accept=".jpg, .jpeg, .png" ><br><br>
+        <small class="text-danger"><?= array_key_exists('image', $errors) ? $errors['image'] : '' ?></small>
+    </div>
+    <button type="submit" class="btn btn-primary"><i class="bi bi-send-plus"></i> envoyer</button>
+    <button type="reset" class="btn btn-secondary"><i class="bi bi-x-square"></i> annuler</button>
+</form>

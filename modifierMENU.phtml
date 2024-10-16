@@ -1,0 +1,26 @@
+<h3> Modifier Menu</h3>
+
+<form action="<?= $_SERVER['PHP_SELF'] . '?id=' . $_GET['id'] ?>" method="post">
+  <!--envoie de id caché -->
+  <input type="hidden" name="id" value="<?= $menu['idmenu'] ?>">
+  
+  <div class="mb-3">
+    <label for="title" class="form-label">Title</label>
+    <input type="text" class="form-control" value="<?= $menu['title'] ?>" id="title" name="title" >
+  </div>
+
+  <div class="mb-3">
+    <label for="description" class="form-label">Prix</label>
+    <input type="text" class="form-control" value="<?= $menu['price'] ?>" id="price" name="price">
+  </div>
+
+  <div class="mb-3">
+    <label for="image" class="form-label">image</label><br>
+
+    <input type="text" class="form-control" id="image" name="image" value="<?= $menu['image']?>">
+  </div>
+  
+    <button type="submit" class="btn btn-primary"><i class="bi bi-send-plus-fill"></i>envoyer</button>
+    <button type="reset" class="btn btn-secondary"><i class="bi bi-x-square-fill"></i>Reset</button>
+
+</form>

@@ -1,0 +1,58 @@
+<h3> Modifier User : <?=$user['nom']." ".$user['prenom']?></h3>
+
+               
+
+<form action="<?= $_SERVER['PHP_SELF'] . '?id=' . $_GET['id'] ?>" method="post">
+  <!--envoie de id caché -->
+  <input type="hidden" name="id" value="<?= $user['id'] ?>">
+  
+  <div class="mb-3">
+    <label for="nom" class="form-label">Nom:</label>
+    <input type="text" class="form-control" value="<?= $user['nom'] ?>" id="nom" name="nom" >
+  </div>
+
+  <div class="mb-3">
+    <label for="prenom" class="form-label">Prenom:</label>
+    <input type="text" class="form-control" value="<?= $user['prenom'] ?>" id="prenom" name="prenom">
+  </div>
+
+  <div class="mb-3">
+    <label for="date de naissance" class="form-label">Date de naissance:</label>
+    <input type="text" class="form-control" value="<?= $user['date_naissance']?>" id="date_naissance" name="date_naissance">
+  </div>
+  <div class="mb-3">
+    <label for="tel" class="form-label">Numero de téléphone:</label>
+    <input type="text" class="form-control" value="<?= $user['tel'] ?>" id="tel" name="tel">
+  </div>
+  <div class="mb-3">
+    <label for="adresse" class="form-label"> Adresse:</label>
+    <input type="text" class="form-control" value="<?= $user['adresse'] ?>" id="adresse" name="adresse">
+  </div>
+  <div class="mb-3">
+    <label for="email" class="form-label">Email:</label>
+    <input type="email" class="form-control" value="<?= $user['email'] ?>" id="email" name="email">
+  </div>
+  <div class="mb-3">
+    <label for="password" class="form-label">Password:</label>
+    <input type="password" class="form-control" value="<?= $user['password'] ?>" id="password" name="password">
+  </div>
+  <div class="mb-3">
+    <label for="avatar" class="form-label">Avatar:</label>
+    <input type="text" class="form-control" value="<?= $user['avatar'] ?>" id="avatar" name="avatar">
+  </div>
+  <div class="mb-3">
+    <label for="role" class="form-label">Role:</label>
+    <select class="form-control form-select" name="role" id="role">
+            <option value="admin" <?= $user['role']=="admin"?'selected':'' ?>>Admin</option>
+            <option value="user" <?= $user['role']=="user"?'selected':'' ?>>user</option>
+          </select>
+     </div>
+  <!-- <div class="mb-3">
+    <label for="role" class="form-label">Role:</label>
+    <input type="text" class="form-control" value="<?= $user['role'] ?>" id="role" name="role">
+  </div> -->
+  
+    <button type="submit" class="btn btn-primary"><i class="bi bi-send-plus-fill"></i>envoyer</button>
+    <button type="reset" class="btn btn-secondary"><i class="bi bi-x-square-fill"></i>Reset</button>
+
+</form>

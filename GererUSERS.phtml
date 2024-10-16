@@ -1,0 +1,49 @@
+
+      
+       <h1 class="text-center text-primary"><i class="bi bi-person-lines-fill"></i> Liste des utilisateurs <i class="bi bi-people-fill"></i>  </h1>
+       <div class="col">
+         <a href="ajouterUser.php" class="btn btn-success float-end"><i class="bi bi-person-plus-fill"></i></i> Ajouter User</a>
+        </div>
+       <table class="table table-hover">
+            <thead>
+                <tr>
+                    
+                    <th scope="col">Nom Utilisateur</th>
+                    <th scope="col">Operations</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($users as $user) : ?>
+                   
+                    <tr>
+                        
+                        <td><?= $user['nom']." ".$user['prenom'] ?></td>
+                        <td>
+                            <a href="user_details.php?iduser=<?= $user['id']?>" class="btn btn-primary"><i class="bi bi-info-circle-fill"></i></a>
+                            <a href="modifierUser.php?id=<?= $user['id'] ?>" class="btn btn-warning"><i class="bi bi-pencil-square"></i></a>
+                            <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#suprimerUser<?= $user['id'] ?>"><i class="bi bi-trash"></i></button>
+                    <!-- Modal -->
+                    <div class="modal fade" id="suprimerUser<?= $user['id'] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel"><?= $user['nom']." ".$user['prenom'] ?></h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    voulez-vous suprimer cette utilisateur?
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annueler</button>
+                                    <a href="suprimerUser.php?id=<?= $user['id'] ?>" type="button" class="btn btn-danger">Suprimer</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    
+     
